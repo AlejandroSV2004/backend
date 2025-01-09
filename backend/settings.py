@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [BASE_DIR /'templates'],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -119,5 +121,10 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+# Directorios adicionales donde buscar archivos estáticos
+STATICFILES_DIRS = [
+   BASE_DIR / STATIC_URL,
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
